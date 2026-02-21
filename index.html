@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Celebrate Steve Hartnett's 80th birthday at Jazz Fest 2026 — April 30 outside Liuzza's by the Track, New Orleans.">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Open Graph / iMessage / Facebook share preview -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Steve Hartnett's 80th Birthday Party">
+  <meta property="og:description" content="Jazz Fest Weekend 2 Kickoff · Thursday, April 30, 2026 · New Orleans">
+  <meta property="og:image"       content="steve.png">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Steve Hartnett's 80th Birthday Party">
+  <meta name="twitter:image"      content="steve.png">
+  <title>Steve Hartnett — 80th Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <span class="header-mark">Steve's 80th Birthday Party</span>
+        <nav class="header-nav">
+          <a href="#event-info">Details</a>
+          <a href="#rsvp" class="btn-nav-rsvp">RSVP</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-photo">
+            <img src="steve.png" alt="Steve Hartnett">
+          </div>
+          <div class="hero-content">
+            <p class="hero-eyebrow">Happy 80th Birthday!</p>
+            <div class="hero-age" aria-hidden="true">80</div>
+            <h1 class="hero-name">Steve<br>Hartnett</h1>
+            <p class="hero-meta">Jazz Fest Weekend 2 Kickoff &middot; Thursday, April 30, 2026 &middot; New Orleans</p>
+            <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="hero-fb-link">Steve on Facebook &rarr;</a>
+            <a href="#rsvp" class="btn-hero-cta">RSVP &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-black"></div>
+
+    <!-- ===================== EVENT DETAILS ===================== -->
+    <section class="event-info" id="event-info">
+      <div class="container">
+        <div class="section-label-row">
+          <span class="section-label">Event Details</span>
+          <div class="label-rule"></div>
+        </div>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Date</span>
+            <span class="info-value">Thursday<br>April 30, 2026</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Time</span>
+            <span class="info-value">9:00 AM<br><em>Until Jazz Fest gates open</em></span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Where</span>
+            <span class="info-value">On the street!<br><em>Near Liuzza's by the Track. We'll give an exact location closer to the date.</em></span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Attire</span>
+            <span class="info-value">White dress shirt<br><em>Over your Jazz Fest clothes</em></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-black"></div>
+
+    <!-- ===================== ABOUT + COUNTDOWN ===================== -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <div class="section-label-row">
+              <span class="section-label">The Birthday Party</span>
+              <div class="label-rule"></div>
+            </div>
+            <p class="about-body">
+              Steve Hartnett is turning 80 — and we're throwing a birthday party on the street
+              before Jazz Fest Weekend 2 kicks off!
+            </p>
+            <p class="about-body">
+              Wear a white dress shirt over your Jazz Fest clothes, just like Steve.
+            </p>
+            <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="social-link">
+              Steve on Facebook &rarr;
+            </a>
+          </div>
+          <div class="countdown-wrap">
+            <p class="countdown-until">Countdown to the party</p>
+            <div class="countdown-grid">
+              <div class="countdown-cell">
+                <span class="cd-num" id="cd-days">--</span>
+                <span class="cd-label">Days</span>
+              </div>
+              <div class="countdown-cell">
+                <span class="cd-num" id="cd-hours">--</span>
+                <span class="cd-label">Hours</span>
+              </div>
+              <div class="countdown-cell">
+                <span class="cd-num" id="cd-mins">--</span>
+                <span class="cd-label">Minutes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule-black"></div>
+
+    <!-- ===================== RSVP ===================== -->
+    <section class="rsvp-section" id="rsvp">
+      <div class="container">
+        <div class="section-label-row">
+          <span class="section-label">RSVP</span>
+          <div class="label-rule"></div>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" id="tab-new" data-tab="new" role="tab" aria-selected="true">New RSVP</button>
+          <button class="tab-btn" id="tab-edit" data-tab="edit" role="tab" aria-selected="false">Edit My RSVP</button>
+        </div>
+
+        <!-- ── NEW RSVP ── -->
+        <div id="view-new" class="rsvp-view" role="tabpanel">
+          <form id="form-new" novalidate autocomplete="off">
+
+            <div class="form-section">
+              <h3 class="form-section-title">Your Information</h3>
+              <div class="field-row two-col">
+                <div class="field">
+                  <label for="fn">First Name <span class="req">*</span></label>
+                  <input type="text" id="fn" name="firstName" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="ln">Last Name <span class="req">*</span></label>
+                  <input type="text" id="ln" name="lastName" autocomplete="family-name" required>
+                </div>
+              </div>
+              <span class="field-hint">Your first name and last initial will appear in the guest list.</span>
+              <div class="field" style="margin-top:var(--sp4)">
+                <label for="ph">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="ph" name="phone" autocomplete="tel" inputmode="tel" placeholder="(504) 555-0100" required>
+                <span class="field-hint">Never shared. We'll text you closer to the date with details, and you can use it to look up or edit your RSVP.</span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Will You Attend?</h3>
+              <div class="radio-group" id="rg-new">
+                <label class="radio-card">
+                  <input type="radio" name="attending" value="Yes" required>
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Yes, I'll be there!</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="attending" value="Maybe">
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Maybe</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="attending" value="No">
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Sorry, can't make it</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-row">
+                <h3 class="form-section-title">Additional Guests</h3>
+                <button type="button" id="btn-add-new" class="btn-add">+ Add Guest</button>
+              </div>
+              <div id="guests-new" class="guests-container"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="submit-new">
+                <span class="btn-label">Submit RSVP</span>
+                <span class="btn-spin hidden" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-error hidden" id="err-new" role="alert"></p>
+          </form>
+        </div>
+
+        <!-- ── EDIT: PHONE LOOKUP ── -->
+        <div id="view-edit-lookup" class="rsvp-view hidden" role="tabpanel">
+          <div class="info-callout">
+            <p>Enter the phone number you used when you RSVP'd to find and update your response.</p>
+          </div>
+          <form id="form-lookup" novalidate autocomplete="off" style="max-width:400px">
+            <div class="field">
+              <label for="lookup-ph">Your Phone Number <span class="req">*</span></label>
+              <input type="tel" id="lookup-ph" name="lookupPhone" inputmode="tel" placeholder="(504) 555-0100" required>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="submit-lookup">
+                <span class="btn-label">Find My RSVP</span>
+                <span class="btn-spin hidden" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-error hidden" id="err-lookup" role="alert"></p>
+          </form>
+        </div>
+
+        <!-- ── EDIT: EDIT FORM ── -->
+        <div id="view-edit-form" class="rsvp-view hidden" role="tabpanel">
+          <div class="edit-banner">
+            <p>Editing RSVP for <strong id="edit-name-display"></strong></p>
+            <button type="button" id="btn-cancel-edit" class="btn-link">Cancel</button>
+          </div>
+          <form id="form-edit" novalidate autocomplete="off">
+            <input type="hidden" id="edit-record-id">
+
+            <div class="form-section">
+              <h3 class="form-section-title">Your Information</h3>
+              <div class="field-row two-col">
+                <div class="field">
+                  <label for="edit-fn">First Name <span class="req">*</span></label>
+                  <input type="text" id="edit-fn" name="firstName" autocomplete="given-name" required>
+                </div>
+                <div class="field">
+                  <label for="edit-ln">Last Name <span class="req">*</span></label>
+                  <input type="text" id="edit-ln" name="lastName" autocomplete="family-name" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="edit-ph">Phone Number</label>
+                <input type="tel" id="edit-ph" name="phone" autocomplete="tel" readonly class="field-readonly">
+                <span class="field-hint">Phone cannot be changed — it's your RSVP identifier.</span>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Will You Attend?</h3>
+              <div class="radio-group" id="rg-edit">
+                <label class="radio-card">
+                  <input type="radio" name="edit-attending" value="Yes" required>
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Yes, I'll be there!</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="edit-attending" value="Maybe">
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Maybe</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="edit-attending" value="No">
+                  <span class="radio-dot"></span>
+                  <span class="radio-text">Sorry, can't make it</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="form-section-row">
+                <h3 class="form-section-title">Additional Guests</h3>
+                <button type="button" id="btn-add-edit" class="btn-add">+ Add Guest</button>
+              </div>
+              <div id="guests-edit" class="guests-container"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" id="submit-edit">
+                <span class="btn-label">Save Changes</span>
+                <span class="btn-spin hidden" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-error hidden" id="err-edit" role="alert"></p>
+          </form>
+        </div>
+
+        <!-- ── CONFIRMATION ── -->
+        <div id="view-confirmation" class="rsvp-view hidden" role="tabpanel">
+          <div class="confirmation-block">
+            <span class="confirmation-check" aria-hidden="true">&#10003;</span>
+            <h3 class="confirmation-title" id="conf-title">You're in!</h3>
+            <p class="confirmation-body" id="conf-body">
+              See you April 30th outside Liuzza's by the Track at 9&nbsp;AM.
+            </p>
+            <div class="confirmation-actions">
+              <button class="btn-secondary" id="btn-edit-from-conf">Edit My RSVP</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="rule-black"></div>
+
+    <!-- ===================== GUEST LIST ===================== -->
+    <section class="guest-section" id="guest-list">
+      <div class="container">
+        <div class="section-label-row">
+          <span class="section-label">Who's Coming</span>
+          <div class="label-rule"></div>
+        </div>
+        <p class="guest-count-line">
+          <span class="guest-count-num" id="guest-count">—</span>
+          <span class="guest-count-text"> people coming to Steve's party</span>
+        </p>
+        <div id="guest-grid" class="guest-grid">
+          <div class="guest-placeholder">Loading attendees&hellip;</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-title">Steve Hartnett's 80th Birthday</p>
+          <p class="footer-sub">April 30, 2026 &middot; New Orleans, Louisiana</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener">Facebook</a>
+          <a href="#rsvp">RSVP</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
