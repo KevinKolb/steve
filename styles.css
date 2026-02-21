@@ -835,7 +835,8 @@ input, textarea, select { font-family: inherit; }
     gap: var(--sp5);
   }
   .hero-photo {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 5;
+    max-height: 70vh;
   }
   .hero-age {
     font-size: clamp(56px, 20vw, 100px);
