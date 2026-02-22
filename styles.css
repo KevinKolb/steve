@@ -92,7 +92,7 @@ input, textarea, select { font-family: inherit; }
    HERO
    ============================================================ */
 .hero {
-  padding: var(--sp10) 0;
+  padding: var(--sp7) 0 var(--sp10) 0;
   overflow: hidden;
 }
 .hero-grid {
