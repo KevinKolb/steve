@@ -403,7 +403,7 @@ function showConfirmation(firstName, attending, isEdit = false) {
     title.textContent = attending === 'No' ? 'Got it.' : 'You\'re in!';
     body.textContent  = attending === 'No'
       ? 'Thanks for letting us know. We\'ll miss you!'
-      : `See you April 30th, ${firstName}! Meet us outside Liuzza's by the Track at 9 AM — right before Jazz Fest opens.`;
+      : `See you April 30th, ${firstName}!`;
   }
   showView('view-confirmation');
 }

@@ -13,6 +13,7 @@
   --gray-600:  #666664;
   --gold:      #2D5F3C;   /* forest green — Steve's varsity jacket */
   --gold-dk:   #1C3D27;   /* deeper green for hover states */
+  --blue:      #5887E1;
   --red-err:   #C0392B;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -77,7 +78,7 @@ input, textarea, select { font-family: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.14em;
   white-space: nowrap;
-  color: var(--gray-400);
+  color: var(--blue);
 }
 .label-rule {
   flex: 1;
@@ -85,67 +86,6 @@ input, textarea, select { font-family: inherit; }
   background: var(--gray-200);
 }
 
-/* ── Inline links ── */
-.inline-link {
-  display: block;
-  margin-top: var(--sp2);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gold);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-.inline-link:hover { text-decoration: underline; }
-
-
-/* ============================================================
-   SITE HEADER
-   ============================================================ */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--white);
-  border-bottom: var(--border-blk);
-}
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 52px;
-}
-.header-mark {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: var(--sp6);
-}
-.header-nav a {
-  font-size: 12px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--gray-600);
-  letter-spacing: 0.05em;
-  transition: color .15s;
-}
-.header-nav a:hover { color: var(--black); }
-
-.btn-nav-rsvp {
-  background: var(--black) !important;
-  color: var(--white) !important;
-  padding: 8px 20px;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.1em !important;
-  text-transform: uppercase;
-  transition: background .15s !important;
-}
-.btn-nav-rsvp:hover { background: var(--gold) !important; }
 
 
 /* ============================================================
@@ -178,13 +118,6 @@ input, textarea, select { font-family: inherit; }
   flex-direction: column;
   gap: var(--sp3);
 }
-.hero-eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-}
 .hero-age {
   font-size: clamp(64px, 10vw, 120px);
   font-weight: 900;
@@ -214,28 +147,11 @@ input, textarea, select { font-family: inherit; }
   font-weight: 400;
   margin-top: var(--sp2);
 }
-.hero-fb-link {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: var(--gray-600);
-  text-decoration: none;
-  border-bottom: 1px solid var(--gray-200);
-  padding-bottom: 2px;
-  transition: color .15s, border-color .15s;
-}
-.hero-fb-link:hover {
-  color: var(--gold);
-  border-color: var(--gold);
-}
-
 .btn-hero-cta {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: var(--sp4);
-  padding: 15px 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 32px;
+  border: 1px solid transparent;
   background: var(--gold);
   color: var(--white);
   text-decoration: none;
@@ -246,6 +162,29 @@ input, textarea, select { font-family: inherit; }
   transition: background .15s;
 }
 .btn-hero-cta:hover { background: var(--gold-dk); }
+
+.btn-blue {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 26px;
+  border: 1px solid var(--blue);
+  background: transparent;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all .15s;
+}
+.btn-blue:hover { background: var(--blue); color: var(--white); }
+
+.hero-btns {
+  display: flex;
+  gap: var(--sp3);
+  flex-wrap: wrap;
+  margin-top: var(--sp4);
+}
 
 
 /* ============================================================
@@ -272,7 +211,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--gold);
+  color: var(--blue);
 }
 .info-value {
   font-size: 15px;
@@ -290,42 +229,16 @@ input, textarea, select { font-family: inherit; }
 
 
 /* ============================================================
-   ABOUT + COUNTDOWN
+   COUNTDOWN
    ============================================================ */
 .about-section { padding: var(--sp8) 0; }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp8);
-  align-items: start;
-}
-.about-body {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--gray-600);
-  margin-bottom: var(--sp4);
-}
-.social-link {
-  display: inline-block;
-  margin-top: var(--sp3);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  text-decoration: none;
-  text-transform: uppercase;
-}
-.social-link:hover { text-decoration: underline; }
-
-/* Countdown */
-.countdown-wrap { align-self: center; }
+.countdown-wrap { }
 .countdown-until {
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--gray-400);
+  color: var(--blue);
   margin-bottom: var(--sp4);
 }
 .countdown-grid {
@@ -352,7 +265,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--gray-400);
+  color: var(--blue);
   margin-top: var(--sp2);
 }
 
@@ -377,12 +290,12 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--gray-400);
+  color: var(--blue);
   transition: all .15s;
 }
 .tab-btn + .tab-btn { border-left: var(--border-blk); }
 .tab-btn.active {
-  background: var(--black);
+  background: var(--blue);
   color: var(--white);
 }
 .tab-btn:not(.active):hover {
@@ -401,7 +314,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--gray-400);
+  color: var(--blue);
   padding-bottom: var(--sp3);
   border-bottom: var(--border);
   margin-bottom: var(--sp5);
@@ -437,9 +350,9 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gray-600);
+  color: var(--blue);
 }
-.req { color: var(--gold); }
+.req { color: var(--blue); }
 
 .field input[type="text"],
 .field input[type="tel"] {
@@ -456,7 +369,7 @@ input, textarea, select { font-family: inherit; }
 }
 .field input:focus {
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,150,44,0.15);
+  box-shadow: 0 0 0 3px rgba(45,95,60,0.15);
 }
 .field-readonly {
   background: var(--gray-100) !important;
@@ -490,7 +403,7 @@ input, textarea, select { font-family: inherit; }
 /* :has() for checked state — supported in all modern browsers */
 .radio-card:has(input:checked) {
   border-color: var(--gold);
-  background: rgba(201,150,44,0.06);
+  background: rgba(45,95,60,0.06);
 }
 
 .radio-card input[type="radio"] {
@@ -541,8 +454,8 @@ input, textarea, select { font-family: inherit; }
   white-space: nowrap;
 }
 .btn-add:hover {
-  border-color: var(--black);
-  color: var(--black);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 /* Guest Entries */
@@ -566,7 +479,7 @@ input, textarea, select { font-family: inherit; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--gray-400);
+  color: var(--blue);
 }
 .btn-remove {
   background: none;
@@ -586,7 +499,7 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   gap: var(--sp2);
   padding: 16px 36px;
-  background: var(--black);
+  background: var(--gold);
   color: var(--white);
   border: none;
   font-size: 12px;
@@ -596,7 +509,7 @@ input, textarea, select { font-family: inherit; }
   transition: background .15s;
   min-width: 180px;
 }
-.btn-primary:hover:not(:disabled) { background: var(--gold); }
+.btn-primary:hover:not(:disabled) { background: var(--gold-dk); }
 .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
 
 /* Spinner (CSS only) */
@@ -615,8 +528,8 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   padding: 13px 26px;
   background: transparent;
-  color: var(--black);
-  border: var(--border-blk);
+  color: var(--blue);
+  border: 1px solid var(--blue);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -625,23 +538,7 @@ input, textarea, select { font-family: inherit; }
   cursor: pointer;
   transition: all .15s;
 }
-.btn-secondary:hover { background: var(--black); color: var(--white); }
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  padding: 13px 26px;
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all .15s;
-}
-.btn-outline:hover { background: var(--gold); color: var(--white); }
+.btn-secondary:hover { background: var(--blue); color: var(--white); }
 
 .btn-link {
   background: none;
@@ -688,7 +585,7 @@ input, textarea, select { font-family: inherit; }
   align-items: center;
   justify-content: space-between;
   padding: var(--sp3) var(--sp5);
-  background: rgba(201,150,44,0.1);
+  background: rgba(45,95,60,0.1);
   border-left: 3px solid var(--gold);
   margin-bottom: var(--sp6);
   gap: var(--sp4);
@@ -705,7 +602,7 @@ input, textarea, select { font-family: inherit; }
 .confirmation-check {
   display: block;
   font-size: 52px;
-  color: var(--gold);
+  color: var(--blue);
   line-height: 1;
   margin-bottom: var(--sp4);
 }
@@ -727,7 +624,6 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   flex-wrap: wrap;
 }
-
 
 /* ============================================================
    GUEST LIST
@@ -768,7 +664,7 @@ input, textarea, select { font-family: inherit; }
 }
 .guest-card-status {
   font-size: 11px;
-  color: var(--gray-400);
+  color: var(--blue);
   margin-top: 3px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -793,35 +689,10 @@ input, textarea, select { font-family: inherit; }
   color: var(--white);
   padding: var(--sp6) 0;
 }
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--sp5);
-  flex-wrap: wrap;
-}
 .footer-title {
   font-size: 14px;
   font-weight: 600;
 }
-.footer-sub {
-  font-size: 12px;
-  color: #888;
-  margin-top: 3px;
-}
-.footer-links {
-  display: flex;
-  gap: var(--sp5);
-}
-.footer-links a {
-  font-size: 12px;
-  color: #999;
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  transition: color .15s;
-}
-.footer-links a:hover { color: var(--gold); }
 
 
 /* ============================================================
@@ -836,15 +707,10 @@ input, textarea, select { font-family: inherit; }
   }
   .hero-photo {
     aspect-ratio: 4 / 5;
-    max-height: 70vh;
+    max-height: 55vh;
   }
   .hero-age {
     font-size: clamp(56px, 20vw, 100px);
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: var(--sp6);
   }
 
   .info-grid { grid-template-columns: 1fr 1fr; }
@@ -854,19 +720,41 @@ input, textarea, select { font-family: inherit; }
    RESPONSIVE — Mobile
    ============================================================ */
 @media (max-width: 560px) {
+  /* Hero */
+  .hero { padding: var(--sp6) 0; }
+  .hero-grid { gap: var(--sp4); }
+  .hero-photo { max-height: 44vh; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns a { text-align: center; justify-content: center; }
+
+  /* Section padding */
+  .event-info  { padding: var(--sp6) 0; }
+  .about-section { padding: var(--sp6) 0; }
+  .rsvp-section  { padding: var(--sp6) 0; }
+  .guest-section { padding: var(--sp6) 0; }
+
+  /* Section label spacing */
+  .section-label-row { margin-bottom: var(--sp4); }
+
+  /* Event details */
   .info-grid { grid-template-columns: 1fr; }
 
+  /* Countdown */
+  .countdown-cell { padding: var(--sp4) var(--sp3); }
+
+  /* Guest list */
+  .guest-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .guest-count-num { font-size: 36px; }
+
+  /* RSVP form */
   .field-row.two-col { grid-template-columns: 1fr; }
+  .form-section { margin-bottom: var(--sp6); }
 
   .tab-bar { width: 100%; }
   .tab-btn { flex: 1; padding: 12px var(--sp3); font-size: 10px; }
 
+  /* Confirmation */
   .confirmation-block { padding: var(--sp7) var(--sp5); }
-
-  .header-nav a:not(.btn-nav-rsvp) { display: none; }
-
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-
   .confirmation-actions { flex-direction: column; align-items: stretch; }
   .confirmation-actions > * { text-align: center; justify-content: center; }
 }

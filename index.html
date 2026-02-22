@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Celebrate Steve Hartnett's 80th birthday">
+  <meta name="description" content="Join us for Steve Hartnett's 80th birthday party — 2nd Jazz Fest Thursday, April 30, 2026, near Liuzza's by the Track, New Orleans.">
   <meta name="theme-color" content="#2D5F3C">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <!-- Open Graph / iMessage / Facebook share preview -->
@@ -24,19 +24,6 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <span class="header-mark">Steve's 80th Birthday Party</span>
-        <nav class="header-nav">
-          <a href="#event-info">Details</a>
-          <a href="#rsvp" class="btn-nav-rsvp">RSVP</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
   <main>
 
     <!-- ===================== HERO ===================== -->
@@ -47,12 +34,13 @@
             <img src="steve.png" alt="Steve Hartnett">
           </div>
           <div class="hero-content">
-            <p class="hero-eyebrow">Happy 80th Birthday!</p>
+            <h1 class="hero-name">Steve<br>Hartnett<br>turns</h1>
             <div class="hero-age" aria-hidden="true">80</div>
-            <h1 class="hero-name">Steve<br>Hartnett</h1>
-            <p class="hero-meta">Jazz Fest Weekend 2 Kickoff &middot; Thursday, April 30, 2026 &middot; 9am &middot; New Orleans</p>
-            <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="hero-fb-link">Steve on Facebook &rarr;</a>
-            <a href="#rsvp" class="btn-hero-cta">RSVP &rarr;</a>
+            <p class="hero-meta">You were taking April 30th off for Jazz Fest anyway, right?</p>
+            <div class="hero-btns">
+              <a href="#event-info" class="btn-blue">Details</a>
+              <a href="#rsvp" class="btn-hero-cta">RSVP &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -81,50 +69,35 @@
             <span class="info-value">On the street!<br><em>Near Liuzza's by the Track. We'll give an exact location closer to the date.</em></span>
           </div>
           <div class="info-item">
-            <span class="info-label">Attire</span>
+            <span class="info-label">Optional Attire</span>
             <span class="info-value">White dress shirt<br><em>Over your Jazz Fest clothes</em></span>
           </div>
+        </div>
+        <div class="info-callout" style="margin-top:var(--sp5)">
+          <p><strong>Not a surprise!</strong> Feel free to tell him if you'll be there.</p>
         </div>
       </div>
     </section>
 
     <div class="rule-black"></div>
 
-    <!-- ===================== ABOUT + COUNTDOWN ===================== -->
+    <!-- ===================== COUNTDOWN ===================== -->
     <section class="about-section">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-text">
-            <div class="section-label-row">
-              <span class="section-label">The Birthday Party</span>
-              <div class="label-rule"></div>
+        <div class="countdown-wrap">
+          <p class="countdown-until">Countdown to the party</p>
+          <div class="countdown-grid">
+            <div class="countdown-cell">
+              <span class="cd-num" id="cd-days">--</span>
+              <span class="cd-label">Days</span>
             </div>
-            <p class="about-body">
-              Steve Hartnett is turning 80 — and we're throwing a birthday party on the street
-              before Jazz Fest Weekend 2 kicks off!
-            </p>
-            <p class="about-body">
-              Wear a white dress shirt over your Jazz Fest clothes, just like Steve.
-            </p>
-            <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="social-link">
-              Steve on Facebook &rarr;
-            </a>
-          </div>
-          <div class="countdown-wrap">
-            <p class="countdown-until">Countdown to the party</p>
-            <div class="countdown-grid">
-              <div class="countdown-cell">
-                <span class="cd-num" id="cd-days">--</span>
-                <span class="cd-label">Days</span>
-              </div>
-              <div class="countdown-cell">
-                <span class="cd-num" id="cd-hours">--</span>
-                <span class="cd-label">Hours</span>
-              </div>
-              <div class="countdown-cell">
-                <span class="cd-num" id="cd-mins">--</span>
-                <span class="cd-label">Minutes</span>
-              </div>
+            <div class="countdown-cell">
+              <span class="cd-num" id="cd-hours">--</span>
+              <span class="cd-label">Hours</span>
+            </div>
+            <div class="countdown-cell">
+              <span class="cd-num" id="cd-mins">--</span>
+              <span class="cd-label">Minutes</span>
             </div>
           </div>
         </div>
@@ -302,11 +275,10 @@
           <div class="confirmation-block">
             <span class="confirmation-check" aria-hidden="true">&#10003;</span>
             <h3 class="confirmation-title" id="conf-title">You're in!</h3>
-            <p class="confirmation-body" id="conf-body">
-              See you April 30th outside Liuzza's by the Track at 9&nbsp;AM.
-            </p>
+            <p class="confirmation-body" id="conf-body">See you April 30th!</p>
             <div class="confirmation-actions">
               <button class="btn-secondary" id="btn-edit-from-conf">Edit My RSVP</button>
+              <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="btn-secondary">Steve on Facebook &rarr;</a>
             </div>
           </div>
         </div>
@@ -338,16 +310,7 @@
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-inner">
-        <div>
-          <p class="footer-title">Steve Hartnett's 80th Birthday</p>
-          <p class="footer-sub">April 30, 2026 &middot; New Orleans, Louisiana</p>
-        </div>
-        <div class="footer-links">
-          <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener">Facebook</a>
-          <a href="#rsvp">RSVP</a>
-        </div>
-      </div>
+      <p class="footer-title">Steve Hartnett's 80th Birthday</p>
     </div>
   </footer>
 
