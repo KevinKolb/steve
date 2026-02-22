@@ -400,9 +400,11 @@ function showConfirmation(firstName, attending, isEdit = false) {
       ? 'Your RSVP has been updated. Sorry you can\'t make it!'
       : `Your RSVP has been updated. See you April 30th, ${firstName}!`;
   } else {
-    title.textContent = attending === 'No' ? 'Got it.' : 'You\'re in!';
+    title.textContent = attending === 'No' ? 'Got it.' : attending === 'Maybe' ? 'Got it!' : 'You\'re in!';
     body.textContent  = attending === 'No'
       ? 'Thanks for letting us know. We\'ll miss you!'
+      : attending === 'Maybe'
+      ? `Hope to see you there, ${firstName}!`
       : `See you April 30th, ${firstName}!`;
   }
   showView('view-confirmation');
