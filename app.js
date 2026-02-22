@@ -431,9 +431,9 @@ async function loadGuestList() {
 
     records.forEach(record => {
       const f = record.fields;
-      total += f['Total Guests'] || 1;
 
       // Primary RSVP holder
+      total += 1;
       grid.appendChild(guestCard(f['First Name'], f['Last Name'], f['Attending']));
 
       // Additional guests (names only — no phones shown)
@@ -441,6 +441,7 @@ async function loadGuestList() {
         try {
           JSON.parse(f['Additional Guests']).forEach(g => {
             if (g.firstName || g.lastName) {
+              total += 1;
               grid.appendChild(guestCard(g.firstName, g.lastName, 'with', `With ${f['First Name'] || ''}`));
             }
           });
