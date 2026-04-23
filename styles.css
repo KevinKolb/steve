@@ -757,4 +757,91 @@ input, textarea, select { font-family: inherit; }
   .confirmation-block { padding: var(--sp7) var(--sp5); }
   .confirmation-actions { flex-direction: column; align-items: stretch; }
   .confirmation-actions > * { text-align: center; justify-content: center; }
+
+  .qr-section { padding: var(--sp6) 0; }
+  .qr-card { padding: var(--sp5); border-radius: 14px; }
+  .qr-card-title { font-size: 28px; }
+}
+
+/* ── QR Code Section ── */
+.qr-section {
+  padding: var(--sp8) 0;
+}
+.qr-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at 40% 35%, #f5edcc 0%, #e8e0b8 40%, #d4e8d4 100%);
+  border: 2px solid var(--gold);
+  border-radius: 20px;
+  padding: var(--sp6) var(--sp6) var(--sp7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp6);
+}
+.qr-card-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.qr-card-title {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  color: var(--black);
+}
+.qr-share-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp1);
+  background: none;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  color: var(--black);
+  flex-shrink: 0;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+}
+.qr-share-btn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.qr-share-label {
+  position: absolute;
+  bottom: -28px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--black);
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.qr-code-wrap {
+  display: flex;
+  justify-content: center;
+}
+#qr-code img,
+#qr-code canvas {
+  display: block;
+  border: 3px solid var(--black);
+  border-radius: 12px;
+}
+.qr-scan-text {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--black);
+  text-align: center;
 }
