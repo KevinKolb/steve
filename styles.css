@@ -239,13 +239,31 @@ input, textarea, select { font-family: inherit; }
 }
 .info-link:hover { color: var(--gold); }
 .map-link {
+  position: relative;
   display: block;
   margin-top: var(--sp5);
   border: var(--border-blk);
   overflow: hidden;
   line-height: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.map-link img { width: 100%; height: auto; }
+.map-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+.map-link img { width: 100%; height: auto; display: block; }
+.map-link-badge {
+  position: absolute;
+  bottom: var(--sp3);
+  right: var(--sp3);
+  background: var(--black);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  pointer-events: none;
+}
 
 
 /* ============================================================
