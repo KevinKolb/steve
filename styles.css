@@ -55,6 +55,38 @@ input, textarea, select { font-family: inherit; }
 /* ── Utility ── */
 .hidden { display: none !important; }
 
+/* ── Alert Banner (scrolling) ── */
+.alert-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--red-err);
+  color: var(--white);
+  overflow: hidden;
+  border-bottom: 2px solid var(--black);
+}
+.alert-banner-track {
+  display: flex;
+  width: max-content;
+  animation: alert-scroll 22s linear infinite;
+}
+.alert-banner-track span {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@keyframes alert-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alert-banner-track { animation: none; }
+}
+
 /* ── Layout ── */
 .container {
   max-width: var(--container);
