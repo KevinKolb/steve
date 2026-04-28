@@ -226,6 +226,13 @@ input, textarea, select { font-family: inherit; }
   margin-top: 3px;
   font-weight: 400;
 }
+.time-strike {
+  color: var(--red-err);
+  text-decoration-color: var(--red-err);
+  text-decoration-thickness: 2px;
+  font-weight: 500;
+  margin-right: 4px;
+}
 .info-link {
   display: inline-block;
   margin-top: var(--sp3);
