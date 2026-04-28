@@ -25,9 +25,8 @@
 <body>
 
   <div class="alert-banner" role="alert" aria-label="Time change announcement">
-    <div class="alert-banner-track">
-      <span>MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;</span>
-      <span aria-hidden="true">MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;</span>
+    <div class="alert-banner-track" id="alert-banner-track">
+      <span class="alert-banner-text">MOVED TO 10AM&nbsp;&nbsp;&#9733;&nbsp;&nbsp;</span>
     </div>
   </div>
 
@@ -353,6 +352,35 @@
   <script src="config.js"></script>
   <script src="app.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    (function () {
+      var track = document.getElementById('alert-banner-track');
+      if (!track) return;
+      var seed = track.querySelector('.alert-banner-text');
+      var pxPerSecond = 80;
+      function build() {
+        while (track.children.length > 1) track.removeChild(track.lastChild);
+        var seedWidth = seed.offsetWidth;
+        if (!seedWidth) return;
+        var minWidth = window.innerWidth * 2 + seedWidth;
+        var copies = Math.max(2, Math.ceil(minWidth / seedWidth));
+        for (var i = 1; i < copies; i++) {
+          var clone = seed.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        }
+        var halfWidth = (seedWidth * copies) / 2;
+        track.style.setProperty('--alert-distance', halfWidth + 'px');
+        track.style.setProperty('--alert-duration', (halfWidth / pxPerSecond) + 's');
+      }
+      build();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(build, 150);
+      });
+    })();
+  </script>
   <script>
     (function () {
       var url = 'https://kevinkolb.github.io/steve/';
