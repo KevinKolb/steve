@@ -841,7 +841,7 @@ input, textarea, select { font-family: inherit; }
 }
 .qr-share-label {
   position: absolute;
-  bottom: -30px;
+  top: calc(100% + 8px);
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
