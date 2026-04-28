@@ -226,6 +226,26 @@ input, textarea, select { font-family: inherit; }
   margin-top: 3px;
   font-weight: 400;
 }
+.info-link {
+  display: inline-block;
+  margin-top: var(--sp3);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.info-link:hover { color: var(--gold); }
+.map-link {
+  display: block;
+  margin-top: var(--sp5);
+  border: var(--border-blk);
+  overflow: hidden;
+  line-height: 0;
+}
+.map-link img { width: 100%; height: auto; }
 
 
 /* ============================================================
