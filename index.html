@@ -322,7 +322,7 @@
                 <line x1="12" y1="2" x2="12" y2="15"/>
                 <path d="M20 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4"/>
               </svg>
-              <span class="qr-share-label">More<br>Options</span>
+              <span class="qr-share-label">More<br>Invite<br>Options</span>
             </button>
           </div>
           <div class="qr-code-wrap">
@@ -368,7 +368,7 @@
           navigator.clipboard.writeText(url).then(function () {
             shareBtn.querySelector('.qr-share-label').textContent = 'Copied!';
             setTimeout(function () {
-              shareBtn.querySelector('.qr-share-label').innerHTML = 'More<br>Options';
+              shareBtn.querySelector('.qr-share-label').innerHTML = 'More<br>Invite<br>Options';
             }, 2000);
           });
         }
