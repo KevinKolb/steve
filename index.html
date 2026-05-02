@@ -3,18 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join us for Steve Hartnett's 80th birthday party — 2nd Jazz Fest Thursday, April 30, 2026, near Liuzza's by the Track, New Orleans.">
+  <meta name="description" content="Thanks for celebrating Steve Hartnett's 80th birthday. Share your photos from the party!">
   <meta name="theme-color" content="#2D5F3C">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- Open Graph / iMessage / Facebook share preview -->
-  <meta property="og:type"        content="website">
-  <meta property="og:title"       content="Steve Hartnett's 80th Birthday Party">
-  <meta property="og:description" content="Jazz Fest Weekend 2 Kickoff · Thursday, April 30, 2026 · New Orleans">
-  <meta property="og:image"       content="steve.png">
-  <meta name="twitter:card"       content="summary_large_image">
-  <meta name="twitter:title"      content="Steve Hartnett's 80th Birthday Party">
-  <meta name="twitter:image"      content="steve.png">
-  <title>Steve Hartnett — 80th Birthday</title>
+  <title>Steve Hartnett — Thanks &amp; Photos</title>
   <link rel="icon" type="image/png" href="steve.png">
   <link rel="apple-touch-icon" href="steve.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,12 +26,10 @@
             <img src="steve.png" alt="Steve Hartnett">
           </div>
           <div class="hero-content">
-            <h1 class="hero-name">Steve<br>Hartnett<br>turns</h1>
-            <div class="hero-age" aria-hidden="true">80</div>
-            <p class="hero-meta">You were taking April 30th off for Jazz Fest anyway, right?</p>
+            <div class="hero-age" aria-hidden="true">Thanks.</div>
+            <p class="hero-meta">What a great party.</p>
             <div class="hero-btns">
-              <a href="#event-info" class="btn-blue">Details</a>
-              <a href="#rsvp" class="btn-hero-cta">RSVP &rarr;</a>
+              <a href="#share-photos" class="btn-hero-cta">Share Photos &rarr;</a>
             </div>
           </div>
         </div>
@@ -48,237 +38,125 @@
 
     <div class="rule-black"></div>
 
-    <!-- ===================== EVENT DETAILS ===================== -->
-    <section class="event-info" id="event-info">
+    <!-- ===================== THANK YOU NOTE ===================== -->
+    <section class="thankyou-section" id="thankyou">
       <div class="container">
         <div class="section-label-row">
-          <span class="section-label">Event Details</span>
+          <span class="section-label">A Note from the Family</span>
           <div class="label-rule"></div>
         </div>
-        <div class="info-grid">
-          <div class="info-item">
-            <span class="info-label">Date</span>
-            <span class="info-value">Thursday<br>April 30, 2026</span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Time</span>
-            <span class="info-value">9:00 AM<br><em>Until Jazz Fest gates open</em></span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Where</span>
-            <span class="info-value">On the street!<br><em>Near Liuzza's by the Track. We'll give an exact location closer to the date.</em></span>
-          </div>
-          <div class="info-item">
-            <span class="info-label">Optional Attire</span>
-            <span class="info-value">White dress shirt<br><em>Over your Jazz Fest clothes</em></span>
-          </div>
-        </div>
-        <div class="info-callout" style="margin-top:var(--sp5)">
-          <p><strong>Not a surprise!</strong> Feel free to tell him if you'll be there.</p>
+        <div class="thankyou-note">
+          <p>
+            Steve's 80th was everything we hoped it would be &mdash; friends, music, and a New Orleans street
+            full of people who've meant so much to him over the years. Thank you for showing up and making it special.
+          </p>
+          <p>
+            If you took any photos or videos, we'd love to have them. Upload below and they'll go straight into
+            our shared folder, organized by your name. No account needed for the iCloud option &mdash; a quick
+            Google sign-in for Drive.
+          </p>
+          <p class="thankyou-sig">&mdash; The Hartnett Family</p>
         </div>
       </div>
     </section>
 
     <div class="rule-black"></div>
 
-    <!-- ===================== COUNTDOWN ===================== -->
-    <section class="about-section">
-      <div class="container">
-        <div class="countdown-wrap">
-          <p class="countdown-until">Countdown to the party</p>
-          <div class="countdown-grid">
-            <div class="countdown-cell">
-              <span class="cd-num" id="cd-days">--</span>
-              <span class="cd-label">Days</span>
-            </div>
-            <div class="countdown-cell">
-              <span class="cd-num" id="cd-hours">--</span>
-              <span class="cd-label">Hours</span>
-            </div>
-            <div class="countdown-cell">
-              <span class="cd-num" id="cd-mins">--</span>
-              <span class="cd-label">Minutes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="rule-black"></div>
-
-    <!-- ===================== RSVP ===================== -->
-    <section class="rsvp-section" id="rsvp">
+    <!-- ===================== SHARE PHOTOS ===================== -->
+    <section class="photos-section" id="share-photos">
       <div class="container">
         <div class="section-label-row">
-          <span class="section-label">RSVP</span>
+          <span class="section-label">Share Your Photos</span>
           <div class="label-rule"></div>
         </div>
 
-        <!-- Tab bar -->
-        <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" id="tab-new" data-tab="new" role="tab" aria-selected="true">New RSVP</button>
-          <button class="tab-btn" id="tab-edit" data-tab="edit" role="tab" aria-selected="false">Edit My RSVP</button>
-        </div>
-
-        <!-- ── NEW RSVP ── -->
-        <div id="view-new" class="rsvp-view" role="tabpanel">
-          <form id="form-new" novalidate autocomplete="off">
-
-            <div class="form-section">
-              <h3 class="form-section-title">Your Information</h3>
-              <div class="field-row two-col">
-                <div class="field">
-                  <label for="fn">First Name <span class="req">*</span></label>
-                  <input type="text" id="fn" name="firstName" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="ln">Last Name <span class="req">*</span></label>
-                  <input type="text" id="ln" name="lastName" autocomplete="family-name" required>
-                </div>
-              </div>
-              <span class="field-hint">Your first name and last initial will appear in the guest list.</span>
-              <div class="field" style="margin-top:var(--sp4)">
-                <label for="ph">Phone Number <span class="req">*</span></label>
-                <input type="tel" id="ph" name="phone" autocomplete="tel" inputmode="tel" placeholder="(504) 555-0100" required>
-                <span class="field-hint">Never shared. We'll text you closer to the date with details, and you can use it to look up or edit your RSVP.</span>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <h3 class="form-section-title">Will You Attend?</h3>
-              <div class="radio-group" id="rg-new">
-                <label class="radio-card">
-                  <input type="radio" name="attending" value="Yes" required>
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Yes, I'll be there!</span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" name="attending" value="Maybe">
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Maybe</span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" name="attending" value="No">
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Sorry, can't make it</span>
-                </label>
-              </div>
-            </div>
-
-            <div class="form-section">
-              <div class="form-section-row">
-                <h3 class="form-section-title">Additional Guests</h3>
-                <button type="button" id="btn-add-new" class="btn-add">+ Add Guest</button>
-              </div>
-              <div id="guests-new" class="guests-container"></div>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="btn-primary" id="submit-new">
-                <span class="btn-label">Submit RSVP</span>
-                <span class="btn-spin hidden" aria-hidden="true"></span>
-              </button>
-            </div>
-            <p class="form-error hidden" id="err-new" role="alert"></p>
-          </form>
-        </div>
-
-        <!-- ── EDIT: PHONE LOOKUP ── -->
-        <div id="view-edit-lookup" class="rsvp-view hidden" role="tabpanel">
-          <div class="info-callout">
-            <p>Enter the phone number you used when you RSVP'd to find and update your response.</p>
-          </div>
-          <form id="form-lookup" novalidate autocomplete="off" style="max-width:400px">
+        <!-- ── STEP 1: NAME ── -->
+        <div id="step-name" class="upload-step">
+          <p class="step-intro">First, tell us your name so we know who's sharing.</p>
+          <form id="form-name" novalidate autocomplete="off" style="max-width:400px; margin-top:var(--sp5)">
             <div class="field">
-              <label for="lookup-ph">Your Phone Number <span class="req">*</span></label>
-              <input type="tel" id="lookup-ph" name="lookupPhone" inputmode="tel" placeholder="(504) 555-0100" required>
+              <label for="uploader-name">Your Name <span class="req">*</span></label>
+              <input type="text" id="uploader-name" name="uploaderName"
+                placeholder="First and Last Name" autocomplete="name" required>
             </div>
             <div class="form-actions">
-              <button type="submit" class="btn-primary" id="submit-lookup">
-                <span class="btn-label">Find My RSVP</span>
-                <span class="btn-spin hidden" aria-hidden="true"></span>
+              <button type="submit" class="btn-primary">
+                <span class="btn-label">Next: Choose Photos &rarr;</span>
               </button>
             </div>
-            <p class="form-error hidden" id="err-lookup" role="alert"></p>
           </form>
         </div>
 
-        <!-- ── EDIT: EDIT FORM ── -->
-        <div id="view-edit-form" class="rsvp-view hidden" role="tabpanel">
-          <div class="edit-banner">
-            <p>Editing RSVP for <strong id="edit-name-display"></strong></p>
-            <button type="button" id="btn-cancel-edit" class="btn-link">Cancel</button>
+        <!-- ── STEP 2: FILE PICKER ── -->
+        <div id="step-files" class="upload-step hidden">
+          <div class="uploader-greeting">
+            Sharing as <strong id="uploader-display-name"></strong>
+            &nbsp;&middot;&nbsp;
+            <button class="btn-link" id="btn-change-name" type="button">Change</button>
           </div>
-          <form id="form-edit" novalidate autocomplete="off">
-            <input type="hidden" id="edit-record-id">
 
-            <div class="form-section">
-              <h3 class="form-section-title">Your Information</h3>
-              <div class="field-row two-col">
-                <div class="field">
-                  <label for="edit-fn">First Name <span class="req">*</span></label>
-                  <input type="text" id="edit-fn" name="firstName" autocomplete="given-name" required>
-                </div>
-                <div class="field">
-                  <label for="edit-ln">Last Name <span class="req">*</span></label>
-                  <input type="text" id="edit-ln" name="lastName" autocomplete="family-name" required>
-                </div>
-              </div>
-              <div class="field">
-                <label for="edit-ph">Phone Number</label>
-                <input type="tel" id="edit-ph" name="phone" autocomplete="tel" readonly class="field-readonly">
-                <span class="field-hint">Phone cannot be changed — it's your RSVP identifier.</span>
-              </div>
+          <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="Click or drop photos here">
+            <input type="file" id="file-input" accept="image/*,video/*" multiple class="hidden">
+            <div class="drop-zone-inner">
+              <svg class="drop-zone-icon" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p>Drop photos &amp; videos here, or <button class="btn-link" id="btn-browse" type="button">browse files</button></p>
+              <p class="field-hint" style="margin-top:var(--sp2)">Images and videos welcome. Add multiple at once.</p>
             </div>
+          </div>
 
-            <div class="form-section">
-              <h3 class="form-section-title">Will You Attend?</h3>
-              <div class="radio-group" id="rg-edit">
-                <label class="radio-card">
-                  <input type="radio" name="edit-attending" value="Yes" required>
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Yes, I'll be there!</span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" name="edit-attending" value="Maybe">
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Maybe</span>
-                </label>
-                <label class="radio-card">
-                  <input type="radio" name="edit-attending" value="No">
-                  <span class="radio-dot"></span>
-                  <span class="radio-text">Sorry, can't make it</span>
-                </label>
-              </div>
-            </div>
+          <div id="file-preview" class="file-preview hidden"></div>
 
-            <div class="form-section">
-              <div class="form-section-row">
-                <h3 class="form-section-title">Additional Guests</h3>
-                <button type="button" id="btn-add-edit" class="btn-add">+ Add Guest</button>
-              </div>
-              <div id="guests-edit" class="guests-container"></div>
-            </div>
+          <p class="upload-options-label hidden" id="upload-options-label">Upload to:</p>
 
-            <div class="form-actions">
-              <button type="submit" class="btn-primary" id="submit-edit">
-                <span class="btn-label">Save Changes</span>
-                <span class="btn-spin hidden" aria-hidden="true"></span>
-              </button>
-            </div>
-            <p class="form-error hidden" id="err-edit" role="alert"></p>
-          </form>
+          <div class="upload-options">
+            <button type="button" class="upload-option-btn drive" id="btn-google-drive" disabled>
+              <!-- Google Drive colour logo -->
+              <svg width="20" height="18" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg">
+                <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
+                <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0-1.2 4.5h27.5z" fill="#00ac47"/>
+                <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.5l5.85 11.5z" fill="#ea4335"/>
+                <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/>
+                <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/>
+                <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
+              </svg>
+              Upload to Google Drive
+            </button>
+            <button type="button" class="upload-option-btn icloud" id="btn-icloud">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+              Save to iCloud / Device
+            </button>
+          </div>
+
+          <p class="form-error hidden" id="upload-error" role="alert"></p>
         </div>
 
-        <!-- ── CONFIRMATION ── -->
-        <div id="view-confirmation" class="rsvp-view hidden" role="tabpanel">
+        <!-- ── STEP 3: UPLOADING ── -->
+        <div id="step-uploading" class="upload-step hidden">
+          <div class="uploader-greeting">
+            Uploading <strong id="uploading-count"></strong> for <strong id="uploading-name"></strong>&hellip;
+          </div>
+          <div id="progress-list" class="progress-list"></div>
+        </div>
+
+        <!-- ── STEP 4: DONE ── -->
+        <div id="step-done" class="upload-step hidden">
           <div class="confirmation-block">
             <span class="confirmation-check" aria-hidden="true">&#10003;</span>
-            <h3 class="confirmation-title" id="conf-title">You're in!</h3>
-            <p class="confirmation-body" id="conf-body">See you April 30th!</p>
+            <h3 class="confirmation-title">Photos Shared!</h3>
+            <p class="confirmation-body" id="done-message">Thanks for sharing your photos from Steve's party.</p>
             <div class="confirmation-actions">
-              <button class="btn-secondary" id="btn-edit-from-conf">Edit My RSVP</button>
-              <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="btn-secondary">Steve on Facebook &rarr;</a>
+              <button type="button" class="btn-secondary" id="btn-share-more">Share More Photos</button>
+              <a href="https://www.facebook.com/steveahartnett" target="_blank" rel="noopener" class="btn-secondary">
+                Steve on Facebook &rarr;
+              </a>
             </div>
           </div>
         </div>
@@ -288,89 +166,626 @@
 
     <div class="rule-black"></div>
 
-    <!-- ===================== GUEST LIST ===================== -->
-    <section class="guest-section" id="guest-list">
+    <!-- ===================== CONTRIBUTORS ===================== -->
+    <section class="guest-section" id="contributors">
       <div class="container">
         <div class="section-label-row">
-          <span class="section-label">Who's Coming</span>
+          <span class="section-label">Who's Shared Photos</span>
           <div class="label-rule"></div>
         </div>
         <p class="guest-count-line">
-          <span class="guest-count-num" id="guest-count">—</span>
-          <span class="guest-count-text"> people coming to Steve's party</span>
+          <span class="guest-count-num" id="contributor-count">&mdash;</span>
+          <span class="guest-count-text"> people have shared photos</span>
         </p>
-        <div id="guest-grid" class="guest-grid">
-          <div class="guest-placeholder">Loading attendees&hellip;</div>
+        <div id="contributors-grid" class="guest-grid">
+          <div class="guest-placeholder">Loading&hellip;</div>
         </div>
       </div>
     </section>
 
     <div class="rule-black"></div>
 
-    <!-- ===================== QR CODE ===================== -->
-    <section class="qr-section">
-      <div class="container">
-        <div class="qr-card">
-          <div class="qr-card-top">
-            <h2 class="qr-card-title">Invite<br>Friends<br>of Steve</h2>
-            <button class="qr-share-btn" id="qr-share-btn" aria-label="Share">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="16 6 12 2 8 6"/>
-                <line x1="12" y1="2" x2="12" y2="15"/>
-                <path d="M20 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4"/>
-              </svg>
-              <span class="qr-share-label">More<br>Options</span>
-            </button>
-          </div>
-          <div class="qr-code-wrap">
-            <div id="qr-code"></div>
-          </div>
-          <p class="qr-scan-text">Hold up your phone for friends to scan</p>
+  </main>
+
+  <!-- ===================== iCLOUD MODAL ===================== -->
+  <div id="icloud-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 class="modal-title" id="modal-heading">Save to iCloud / Device</h2>
+
+      <div id="modal-share-status" class="hidden" style="margin-bottom:var(--sp5)">
+        <div class="info-callout">
+          <p id="modal-share-status-text"></p>
         </div>
       </div>
-    </section>
 
-  </main>
+      <div id="modal-album-section" class="hidden">
+        <div class="info-callout" style="margin-bottom:var(--sp5)">
+          <p>Join our shared iCloud Photos album to see &mdash; and add &mdash; everyone's photos in one place.</p>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-num">1</div>
+          <div class="modal-step-text">Open the <strong>Photos</strong> app on your iPhone or Mac</div>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-num">2</div>
+          <div class="modal-step-text">Tap the link below to join the shared album</div>
+        </div>
+        <div class="modal-step">
+          <div class="modal-step-num">3</div>
+          <div class="modal-step-text">Upload your photos directly from the album &mdash; everyone can see and download them</div>
+        </div>
+        <a id="modal-album-link" href="#" target="_blank" rel="noopener"
+          class="btn-primary" style="display:inline-flex; margin-top:var(--sp5); text-decoration:none">
+          Join Shared Album &rarr;
+        </a>
+      </div>
+
+      <div id="modal-no-album" class="hidden">
+        <p style="font-size:14px; color:var(--gray-600)">
+          Your photos have been saved to your device. If you have iCloud Photos turned on, they'll sync automatically.
+        </p>
+      </div>
+
+      <!-- "Let us know" form so iCloud sharers appear in the contributors list -->
+      <div class="modal-log-section" id="modal-log-section">
+        <p class="modal-log-label">So you show up in the contributors list, let us know your name:</p>
+        <form id="form-icloud-log" autocomplete="off">
+          <div class="modal-log-row">
+            <input type="text" id="icloud-log-name" placeholder="Your name"
+              class="modal-log-input" autocomplete="name">
+            <button type="submit" class="btn-primary modal-log-btn">
+              <span class="btn-label">Let us know</span>
+              <span class="btn-spin hidden" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="form-error hidden" id="icloud-log-error" role="alert" style="margin-top:var(--sp3)"></p>
+          <p class="hidden" id="icloud-log-success" style="margin-top:var(--sp3); font-size:13px; color:var(--gold); font-weight:600">
+            Got it &mdash; thanks!
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-title">Steve Hartnett's 80th Birthday</p>
+      <p class="footer-title">Steve Hartnett's 80th Birthday &mdash; April 30, 2026</p>
     </div>
   </footer>
 
   <script src="config.js"></script>
-  <script src="app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+  <!--
+    Google Identity Services — loads async.
+    Drive upload requires:
+      1. A Google Cloud project with Drive API + Sheets API enabled
+      2. An OAuth 2.0 Web Client ID (add your GitHub Pages domain as authorized origin)
+      3. A shared Google Drive folder (set to "Editor" access for anyone with the link)
+      4. A Google Sheet for the contributor log (share so "anyone with link can view")
+      5. A Google API key (for reading the Sheet without auth)
+    Put all IDs in config.js — see the keys added there.
+  -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
   <script>
-    (function () {
-      var url = 'https://kevinkolb.github.io/steve/';
-      new QRCode(document.getElementById('qr-code'), {
-        text: url,
-        width: 260,
-        height: 260,
-        colorDark: '#0D0D0D',
-        colorLight: '#FFFFFF',
-        correctLevel: QRCode.CorrectLevel.M
+  (function () {
+    'use strict';
+
+    /* ── State ── */
+    var uploaderName   = '';
+    var selectedFiles  = [];
+    var gAccessToken   = null;
+    var tokenClient    = null;
+    var pendingAction  = null; // 'drive' | 'icloud-log'
+    var pendingICloudName = '';
+
+    /* ── Utility ── */
+    function $(id) { return document.getElementById(id); }
+
+    function escHtml(str) {
+      return String(str).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
       });
-      var shareBtn = document.getElementById('qr-share-btn');
-      shareBtn.addEventListener('click', function () {
-        if (navigator.share) {
-          navigator.share({
-            title: "Steve Hartnett's 80th Birthday",
-            text: "Join us for Steve Hartnett's 80th birthday party — April 30th in New Orleans!",
-            url: url
-          });
+    }
+
+    function showStep(step) {
+      ['name', 'files', 'uploading', 'done'].forEach(function (s) {
+        $('step-' + s).classList.toggle('hidden', s !== step);
+      });
+    }
+
+    function showUploadError(msg) {
+      var el = $('upload-error');
+      el.textContent = msg;
+      el.classList.remove('hidden');
+      setTimeout(function () { el.classList.add('hidden'); }, 8000);
+    }
+
+    /* ── Step 1: Name ── */
+    $('form-name').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = $('uploader-name').value.trim();
+      if (!name) return;
+      uploaderName = name;
+      $('uploader-display-name').textContent = name;
+      showStep('files');
+    });
+
+    $('btn-change-name').addEventListener('click', function () { showStep('name'); });
+
+    /* ── Step 2: File Picker ── */
+    var dropZone  = $('drop-zone');
+    var fileInput = $('file-input');
+
+    $('btn-browse').addEventListener('click', function (e) { e.stopPropagation(); fileInput.click(); });
+    dropZone.addEventListener('click', function () { fileInput.click(); });
+    dropZone.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); }
+    });
+    dropZone.addEventListener('dragover', function (e) {
+      e.preventDefault(); dropZone.classList.add('drag-over');
+    });
+    dropZone.addEventListener('dragleave', function () { dropZone.classList.remove('drag-over'); });
+    dropZone.addEventListener('drop', function (e) {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      addFiles(Array.from(e.dataTransfer.files));
+    });
+    fileInput.addEventListener('change', function () {
+      addFiles(Array.from(fileInput.files));
+      fileInput.value = '';
+    });
+
+    function addFiles(files) {
+      var media = files.filter(function (f) {
+        return f.type.startsWith('image/') || f.type.startsWith('video/');
+      });
+      selectedFiles = selectedFiles.concat(media);
+      renderPreview();
+      updateButtons();
+    }
+
+    function renderPreview() {
+      var preview = $('file-preview');
+      var label   = $('upload-options-label');
+      if (selectedFiles.length === 0) {
+        preview.classList.add('hidden');
+        label.classList.add('hidden');
+        preview.innerHTML = '';
+        return;
+      }
+      preview.classList.remove('hidden');
+      label.classList.remove('hidden');
+      preview.innerHTML = '';
+
+      selectedFiles.forEach(function (file, i) {
+        var thumb = document.createElement('div');
+        thumb.className = 'photo-thumb';
+
+        if (file.type.startsWith('image/')) {
+          var img = document.createElement('img');
+          img.alt = file.name;
+          img.src = URL.createObjectURL(file);
+          thumb.appendChild(img);
         } else {
-          navigator.clipboard.writeText(url).then(function () {
-            shareBtn.querySelector('.qr-share-label').textContent = 'Copied!';
-            setTimeout(function () {
-              shareBtn.querySelector('.qr-share-label').innerHTML = 'More<br>Options';
-            }, 2000);
-          });
+          var vt = document.createElement('div');
+          vt.className = 'video-thumb';
+          vt.innerHTML = '<span style="font-size:26px">&#127909;</span><span>' + escHtml(file.name) + '</span>';
+          thumb.appendChild(vt);
+        }
+
+        var rm = document.createElement('button');
+        rm.className = 'thumb-remove';
+        rm.innerHTML = '&times;';
+        rm.type = 'button';
+        rm.setAttribute('aria-label', 'Remove ' + file.name);
+        rm.addEventListener('click', (function (idx) {
+          return function (e) {
+            e.stopPropagation();
+            selectedFiles.splice(idx, 1);
+            renderPreview();
+            updateButtons();
+          };
+        })(i));
+        thumb.appendChild(rm);
+        preview.appendChild(thumb);
+      });
+
+      var countEl = document.createElement('div');
+      countEl.className = 'file-count';
+      countEl.textContent = selectedFiles.length + ' file' + (selectedFiles.length !== 1 ? 's' : '') + ' selected';
+      preview.appendChild(countEl);
+    }
+
+    function updateButtons() {
+      var cfg = window.SITE_CONFIG || {};
+      var driveReady = !!(cfg.googleClientId && cfg.googleDriveFolderId);
+      $('btn-google-drive').disabled = !driveReady || selectedFiles.length === 0;
+    }
+
+    /* ── Google Auth ── */
+    function initGoogleAuth() {
+      var cfg = window.SITE_CONFIG || {};
+      if (!window.google || !cfg.googleClientId) return;
+
+      var scopes = ['https://www.googleapis.com/auth/drive.file'];
+      if (cfg.googleSheetsId) scopes.push('https://www.googleapis.com/auth/spreadsheets');
+
+      tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: cfg.googleClientId,
+        scope: scopes.join(' '),
+        callback: function (response) {
+          if (response.error) {
+            showUploadError('Google sign-in was cancelled or failed: ' + response.error);
+            if (pendingAction) { pendingAction = null; showStep('files'); }
+            return;
+          }
+          gAccessToken = response.access_token;
+          var action = pendingAction;
+          pendingAction = null;
+
+          if (action === 'drive') {
+            startDriveUpload();
+          } else if (action === 'icloud-log') {
+            doICloudLog(pendingICloudName);
+          }
         }
       });
+
+      updateButtons();
+    }
+
+    /* Poll for GIS to load (it's async/defer) */
+    (function waitForGIS() {
+      if (window.google && window.google.accounts) {
+        initGoogleAuth();
+      } else {
+        setTimeout(waitForGIS, 80);
+      }
     })();
+
+    /* ── Google Drive Upload ── */
+    $('btn-google-drive').addEventListener('click', function () {
+      if (selectedFiles.length === 0) { showUploadError('Please select some photos first.'); return; }
+      if (!tokenClient) { showUploadError('Google Drive is not configured. Fill in config.js.'); return; }
+      pendingAction = 'drive';
+      if (gAccessToken) {
+        startDriveUpload();
+      } else {
+        tokenClient.requestAccessToken({ prompt: 'consent' });
+      }
+    });
+
+    async function startDriveUpload() {
+      var cfg   = window.SITE_CONFIG || {};
+      var files = selectedFiles.slice();
+
+      $('uploading-count').textContent = files.length + ' photo' + (files.length !== 1 ? 's' : '');
+      $('uploading-name').textContent  = uploaderName;
+      showStep('uploading');
+
+      var progressList = $('progress-list');
+      progressList.innerHTML = '';
+
+      try {
+        var fileNames = [];
+
+        for (var i = 0; i < files.length; i++) {
+          var file      = files[i];
+          var safeName  = uploaderName.replace(/[^a-zA-Z0-9\s\-]/g, '').trim();
+          var destName  = '[' + safeName + '] ' + file.name;
+          fileNames.push(file.name);
+
+          var item = document.createElement('div');
+          item.className = 'progress-item';
+          var barId = 'pb-' + i, pctId = 'pp-' + i;
+          item.innerHTML =
+            '<div class="progress-item-name">' + escHtml(file.name) + '</div>' +
+            '<div class="progress-bar-wrap"><div class="progress-bar" id="' + barId + '"></div></div>' +
+            '<div class="progress-pct" id="' + pctId + '">0%</div>';
+          progressList.appendChild(item);
+
+          await uploadFileToDrive(file, destName, cfg.googleDriveFolderId, (function (bId, pId) {
+            return function (pct) {
+              var bar   = document.getElementById(bId);
+              var label = document.getElementById(pId);
+              if (bar)   bar.style.width   = Math.round(pct * 100) + '%';
+              if (label) label.textContent = Math.round(pct * 100) + '%';
+            };
+          })(barId, pctId));
+        }
+
+        if (cfg.googleSheetsId) {
+          await sheetAppendRow(uploaderName, files.length, fileNames.join(', '), 'Google Drive');
+        }
+
+        selectedFiles = [];
+        $('done-message').textContent =
+          'Thanks ' + uploaderName + '! Your ' + files.length +
+          ' photo' + (files.length !== 1 ? 's are' : ' is') + ' now in our shared folder.';
+        showStep('done');
+        loadContributors();
+
+      } catch (err) {
+        console.error(err);
+        showUploadError('Upload failed: ' + (err.message || 'Unknown error. Please try again.'));
+        showStep('files');
+      }
+    }
+
+    function uploadFileToDrive(file, destName, folderId, onProgress) {
+      return new Promise(async function (resolve, reject) {
+        var initRes;
+        try {
+          initRes = await fetch(
+            'https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable',
+            {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + gAccessToken,
+                'Content-Type': 'application/json',
+                'X-Upload-Content-Type': file.type || 'application/octet-stream',
+                'X-Upload-Content-Length': String(file.size)
+              },
+              body: JSON.stringify({ name: destName, parents: [folderId] })
+            }
+          );
+        } catch (e) { reject(e); return; }
+
+        if (!initRes.ok) {
+          var errText = await initRes.text().catch(function () { return initRes.status; });
+          reject(new Error('Could not start upload for "' + file.name + '". ' + errText));
+          return;
+        }
+
+        var uploadUrl = initRes.headers.get('Location');
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener('progress', function (e) {
+          if (e.lengthComputable) onProgress(e.loaded / e.total);
+        });
+        xhr.addEventListener('load', function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            onProgress(1);
+            resolve();
+          } else {
+            reject(new Error('Upload failed for "' + file.name + '" (' + xhr.status + ')'));
+          }
+        });
+        xhr.addEventListener('error', function () {
+          reject(new Error('Network error while uploading "' + file.name + '"'));
+        });
+        xhr.open('PUT', uploadUrl);
+        xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+        xhr.send(file);
+      });
+    }
+
+    /* ── Google Sheets Logging ── */
+    async function sheetAppendRow(name, count, fileNames, via) {
+      var cfg = window.SITE_CONFIG || {};
+      if (!cfg.googleSheetsId || !gAccessToken) return;
+      await fetch(
+        'https://sheets.googleapis.com/v4/spreadsheets/' + cfg.googleSheetsId +
+        '/values/Sheet1!A:E:append?valueInputOption=USER_ENTERED',
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer ' + gAccessToken,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            values: [[
+              name,
+              new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
+              count,
+              fileNames,
+              via || ''
+            ]]
+          })
+        }
+      );
+    }
+
+    async function loadContributors() {
+      var cfg = window.SITE_CONFIG || {};
+      var grid = $('contributors-grid');
+
+      if (!cfg.googleSheetsId || !cfg.googleApiKey) {
+        grid.innerHTML = '<div class="guest-placeholder">Configure <code>googleSheetsId</code> and <code>googleApiKey</code> in config.js to show contributors.</div>';
+        $('contributor-count').textContent = '—';
+        return;
+      }
+
+      try {
+        var res  = await fetch(
+          'https://sheets.googleapis.com/v4/spreadsheets/' + cfg.googleSheetsId +
+          '/values/Sheet1!A:C?key=' + cfg.googleApiKey
+        );
+        var data = await res.json();
+        var rows = (data.values || []).filter(function (r) {
+          return r[0] && r[0] !== 'Name';
+        });
+
+        /* Aggregate by name */
+        var byName = {};
+        rows.forEach(function (r) {
+          var n   = r[0] || '';
+          var cnt = parseInt(r[2], 10);
+          if (!byName[n]) byName[n] = 0;
+          if (!isNaN(cnt)) byName[n] += cnt;
+        });
+
+        var names = Object.keys(byName);
+        $('contributor-count').textContent = names.length || '0';
+
+        if (names.length === 0) {
+          grid.innerHTML = '<div class="guest-placeholder">No photos shared yet &mdash; be the first!</div>';
+          return;
+        }
+
+        grid.innerHTML = '';
+        names.forEach(function (name) {
+          var count = byName[name];
+          var card  = document.createElement('div');
+          card.className = 'guest-card';
+          card.innerHTML =
+            '<div class="guest-card-name">' + escHtml(name) + '</div>' +
+            '<div class="guest-card-status yes">' +
+              (count > 0 ? count + ' photo' + (count !== 1 ? 's' : '') : 'shared via iCloud') +
+            '</div>';
+          grid.appendChild(card);
+        });
+      } catch (e) {
+        console.warn('Could not load contributors:', e);
+        grid.innerHTML = '<div class="guest-placeholder">Could not load contributor list.</div>';
+      }
+    }
+
+    /* ── iCloud / Device Save ── */
+    $('btn-icloud').addEventListener('click', async function () {
+      var cfg   = window.SITE_CONFIG || {};
+      var modal = $('icloud-modal');
+
+      /* Reset modal state */
+      $('modal-share-status').classList.add('hidden');
+      $('modal-album-section').classList.add('hidden');
+      $('modal-no-album').classList.add('hidden');
+
+      /* Show album if configured */
+      if (cfg.iCloudAlbumLink) {
+        $('modal-album-link').href = cfg.iCloudAlbumLink;
+        $('modal-album-section').classList.remove('hidden');
+      }
+
+      if (selectedFiles.length > 0) {
+        if (navigator.canShare && navigator.canShare({ files: selectedFiles })) {
+          /* iOS: native share sheet → Save to Photos / iCloud Drive */
+          try {
+            await navigator.share({
+              files: selectedFiles,
+              title: "Steve's 80th Birthday Photos from " + uploaderName,
+              text:  "Party photos shared by " + uploaderName
+            });
+            $('modal-share-status-text').textContent =
+              'Photos sent to your share sheet! Choose "Save to Photos" or "Save to Files" to add them to iCloud.';
+            $('modal-share-status').classList.remove('hidden');
+          } catch (shareErr) {
+            if (shareErr.name !== 'AbortError') {
+              doFallbackDownload();
+            }
+          }
+        } else {
+          doFallbackDownload();
+        }
+      } else if (!cfg.iCloudAlbumLink) {
+        /* No files + no album link — show generic info */
+        $('modal-no-album').classList.remove('hidden');
+      }
+
+      /* Pre-fill the log name */
+      if (uploaderName) $('icloud-log-name').value = uploaderName;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function doFallbackDownload() {
+      var safe = uploaderName.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_\-]/g, '');
+      selectedFiles.forEach(function (file) {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(file);
+        a.download = ('StevesParty_' + safe + '_' + file.name).replace(/[^a-zA-Z0-9._\-]/g, '_');
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+      });
+      $('modal-share-status-text').textContent =
+        selectedFiles.length + ' file' + (selectedFiles.length !== 1 ? 's' : '') +
+        ' downloaded. iCloud Photos will sync them if enabled on your device.';
+      $('modal-share-status').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      $('icloud-modal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    $('modal-close').addEventListener('click', closeModal);
+    $('icloud-modal').addEventListener('click', function (e) {
+      if (e.target === $('icloud-modal')) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    /* iCloud "Let us know" form */
+    $('form-icloud-log').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var name = $('icloud-log-name').value.trim();
+      if (!name) return;
+
+      var cfg = window.SITE_CONFIG || {};
+      if (!cfg.googleSheetsId) {
+        $('icloud-log-error').textContent = 'Sheets not configured in config.js.';
+        $('icloud-log-error').classList.remove('hidden');
+        return;
+      }
+
+      if (!gAccessToken) {
+        if (!tokenClient) {
+          $('icloud-log-error').textContent = 'Google not configured in config.js.';
+          $('icloud-log-error').classList.remove('hidden');
+          return;
+        }
+        pendingAction     = 'icloud-log';
+        pendingICloudName = name;
+        tokenClient.requestAccessToken({ prompt: '' });
+        return;
+      }
+
+      await doICloudLog(name);
+    });
+
+    async function doICloudLog(name) {
+      var submitBtn = $('form-icloud-log').querySelector('button[type="submit"]');
+      var label = submitBtn.querySelector('.btn-label');
+      var spin  = submitBtn.querySelector('.btn-spin');
+      label.classList.add('hidden');
+      spin.classList.remove('hidden');
+      submitBtn.disabled = true;
+
+      try {
+        await sheetAppendRow(name, 0, '', 'iCloud');
+        $('icloud-log-success').classList.remove('hidden');
+        $('form-icloud-log').classList.add('hidden');
+        loadContributors();
+      } catch (err) {
+        $('icloud-log-error').textContent = 'Could not save: ' + (err.message || 'Try again.');
+        $('icloud-log-error').classList.remove('hidden');
+        label.classList.remove('hidden');
+        spin.classList.add('hidden');
+        submitBtn.disabled = false;
+      }
+    }
+
+    /* ── Share More ── */
+    $('btn-share-more').addEventListener('click', function () {
+      selectedFiles = [];
+      renderPreview();
+      updateButtons();
+      showStep('files');
+    });
+
+    /* ── Init ── */
+    loadContributors();
+    updateButtons();
+
+  })();
   </script>
+
 </body>
 </html>
