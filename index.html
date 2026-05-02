@@ -102,13 +102,6 @@
               </svg>
               Upload to Google Drive
             </button>
-            <button type="button" class="upload-option-btn icloud" id="btn-icloud">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
-              </svg>
-              Save to iCloud / Device
-            </button>
           </div>
 
           <p class="form-error hidden" id="upload-error" role="alert"></p>
@@ -163,68 +156,6 @@
 
   </main>
 
-  <!-- ===================== iCLOUD MODAL ===================== -->
-  <div id="icloud-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
-    <div class="modal-box">
-      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-      <h2 class="modal-title" id="modal-heading">Save to iCloud / Device</h2>
-
-      <div id="modal-share-status" class="hidden" style="margin-bottom:var(--sp5)">
-        <div class="info-callout">
-          <p id="modal-share-status-text"></p>
-        </div>
-      </div>
-
-      <div id="modal-album-section" class="hidden">
-        <div class="info-callout" style="margin-bottom:var(--sp5)">
-          <p>Join our shared iCloud Photos album to see &mdash; and add &mdash; everyone's photos in one place.</p>
-        </div>
-        <div class="modal-step">
-          <div class="modal-step-num">1</div>
-          <div class="modal-step-text">Open the <strong>Photos</strong> app on your iPhone or Mac</div>
-        </div>
-        <div class="modal-step">
-          <div class="modal-step-num">2</div>
-          <div class="modal-step-text">Tap the link below to join the shared album</div>
-        </div>
-        <div class="modal-step">
-          <div class="modal-step-num">3</div>
-          <div class="modal-step-text">Upload your photos directly from the album &mdash; everyone can see and download them</div>
-        </div>
-        <a id="modal-album-link" href="#" target="_blank" rel="noopener"
-          class="btn-primary" style="display:inline-flex; margin-top:var(--sp5); text-decoration:none">
-          Join Shared Album &rarr;
-        </a>
-      </div>
-
-      <div id="modal-no-album" class="hidden">
-        <p style="font-size:14px; color:var(--gray-600)">
-          Your photos have been saved to your device. If you have iCloud Photos turned on, they'll sync automatically.
-        </p>
-      </div>
-
-      <!-- "Let us know" form so iCloud sharers appear in the contributors list -->
-      <div class="modal-log-section" id="modal-log-section">
-        <p class="modal-log-label">So you show up in the contributors list, let us know your name:</p>
-        <form id="form-icloud-log" autocomplete="off">
-          <div class="modal-log-row">
-            <input type="text" id="icloud-log-name" placeholder="Your name"
-              class="modal-log-input" autocomplete="name">
-            <button type="submit" class="btn-primary modal-log-btn">
-              <span class="btn-label">Let us know</span>
-              <span class="btn-spin hidden" aria-hidden="true"></span>
-            </button>
-          </div>
-          <p class="form-error hidden" id="icloud-log-error" role="alert" style="margin-top:var(--sp3)"></p>
-          <p class="hidden" id="icloud-log-success" style="margin-top:var(--sp3); font-size:13px; color:var(--gold); font-weight:600">
-            Got it &mdash; thanks!
-          </p>
-        </form>
-      </div>
-
-    </div>
-  </div>
-
   <!-- ===================== FOOTER ===================== -->
   <footer class="site-footer">
     <div class="container">
@@ -255,8 +186,7 @@
     var selectedFiles  = [];
     var gAccessToken   = null;
     var tokenClient    = null;
-    var pendingAction  = null; // 'drive' | 'icloud-log'
-    var pendingICloudName = '';
+    var pendingAction  = null;
 
     /* ── Utility ── */
     function $(id) { return document.getElementById(id); }
@@ -405,8 +335,6 @@
 
           if (action === 'drive') {
             startDriveUpload();
-          } else if (action === 'icloud-log') {
-            doICloudLog(pendingICloudName);
           }
         }
       });
@@ -610,141 +538,13 @@
           card.innerHTML =
             '<div class="guest-card-name">' + escHtml(name) + '</div>' +
             '<div class="guest-card-status yes">' +
-              (count > 0 ? count + ' photo' + (count !== 1 ? 's' : '') : 'shared via iCloud') +
+              count + ' photo' + (count !== 1 ? 's' : '') +
             '</div>';
           grid.appendChild(card);
         });
       } catch (e) {
         console.warn('Could not load contributors:', e);
         grid.innerHTML = '<div class="guest-placeholder">Could not load contributor list.</div>';
-      }
-    }
-
-    /* ── iCloud / Device Save ── */
-    $('btn-icloud').addEventListener('click', async function () {
-      var cfg   = window.SITE_CONFIG || {};
-      var modal = $('icloud-modal');
-
-      /* Reset modal state */
-      $('modal-share-status').classList.add('hidden');
-      $('modal-album-section').classList.add('hidden');
-      $('modal-no-album').classList.add('hidden');
-
-      /* Show album if configured */
-      if (cfg.iCloudAlbumLink) {
-        $('modal-album-link').href = cfg.iCloudAlbumLink;
-        $('modal-album-section').classList.remove('hidden');
-      }
-
-      if (selectedFiles.length > 0) {
-        if (navigator.canShare && navigator.canShare({ files: selectedFiles })) {
-          /* iOS: native share sheet → Save to Photos / iCloud Drive */
-          try {
-            await navigator.share({
-              files: selectedFiles,
-              title: "Steve's 80th Birthday Photos from " + uploaderName,
-              text:  "Party photos shared by " + uploaderName
-            });
-            $('modal-share-status-text').textContent =
-              'Photos sent to your share sheet! Choose "Save to Photos" or "Save to Files" to add them to iCloud.';
-            $('modal-share-status').classList.remove('hidden');
-          } catch (shareErr) {
-            if (shareErr.name !== 'AbortError') {
-              doFallbackDownload();
-            }
-          }
-        } else {
-          doFallbackDownload();
-        }
-      } else if (!cfg.iCloudAlbumLink) {
-        /* No files + no album link — show generic info */
-        $('modal-no-album').classList.remove('hidden');
-      }
-
-      /* Pre-fill the log name */
-      if (uploaderName) $('icloud-log-name').value = uploaderName;
-
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    });
-
-    function doFallbackDownload() {
-      var safe = uploaderName.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_\-]/g, '');
-      selectedFiles.forEach(function (file) {
-        var a = document.createElement('a');
-        a.href = URL.createObjectURL(file);
-        a.download = ('StevesParty_' + safe + '_' + file.name).replace(/[^a-zA-Z0-9._\-]/g, '_');
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
-      });
-      $('modal-share-status-text').textContent =
-        selectedFiles.length + ' file' + (selectedFiles.length !== 1 ? 's' : '') +
-        ' downloaded. iCloud Photos will sync them if enabled on your device.';
-      $('modal-share-status').classList.remove('hidden');
-    }
-
-    function closeModal() {
-      $('icloud-modal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    $('modal-close').addEventListener('click', closeModal);
-    $('icloud-modal').addEventListener('click', function (e) {
-      if (e.target === $('icloud-modal')) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    /* iCloud "Let us know" form */
-    $('form-icloud-log').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      var name = $('icloud-log-name').value.trim();
-      if (!name) return;
-
-      var cfg = window.SITE_CONFIG || {};
-      if (!cfg.googleSheetsId) {
-        $('icloud-log-error').textContent = 'Sheets not configured in config.js.';
-        $('icloud-log-error').classList.remove('hidden');
-        return;
-      }
-
-      if (!gAccessToken) {
-        if (!tokenClient) {
-          $('icloud-log-error').textContent = 'Google not configured in config.js.';
-          $('icloud-log-error').classList.remove('hidden');
-          return;
-        }
-        pendingAction     = 'icloud-log';
-        pendingICloudName = name;
-        tokenClient.requestAccessToken({ prompt: '' });
-        return;
-      }
-
-      await doICloudLog(name);
-    });
-
-    async function doICloudLog(name) {
-      var submitBtn = $('form-icloud-log').querySelector('button[type="submit"]');
-      var label = submitBtn.querySelector('.btn-label');
-      var spin  = submitBtn.querySelector('.btn-spin');
-      label.classList.add('hidden');
-      spin.classList.remove('hidden');
-      submitBtn.disabled = true;
-
-      try {
-        await sheetAppendRow(name, 0, '', 'iCloud');
-        $('icloud-log-success').classList.remove('hidden');
-        $('form-icloud-log').classList.add('hidden');
-        loadContributors();
-      } catch (err) {
-        $('icloud-log-error').textContent = 'Could not save: ' + (err.message || 'Try again.');
-        $('icloud-log-error').classList.remove('hidden');
-        label.classList.remove('hidden');
-        spin.classList.add('hidden');
-        submitBtn.disabled = false;
       }
     }
 
