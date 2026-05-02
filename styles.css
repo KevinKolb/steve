@@ -55,6 +55,41 @@ input, textarea, select { font-family: inherit; }
 /* ── Utility ── */
 .hidden { display: none !important; }
 
+/* ── Alert Banner (scrolling) ── */
+.alert-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--blue);
+  color: var(--white);
+  overflow: hidden;
+  border-bottom: 2px solid var(--black);
+}
+.alert-banner-track {
+  display: flex;
+  width: max-content;
+  --alert-distance: 100%;
+  --alert-duration: 22s;
+  animation: alert-scroll var(--alert-duration) linear infinite;
+  will-change: transform;
+}
+.alert-banner-track span {
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+@keyframes alert-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--alert-distance))); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .alert-banner-track { animation: none; }
+}
+
 /* ── Layout ── */
 .container {
   max-width: var(--container);
@@ -225,6 +260,51 @@ input, textarea, select { font-family: inherit; }
   color: var(--gray-600);
   margin-top: 3px;
   font-weight: 400;
+}
+.time-strike {
+  color: var(--red-err);
+  text-decoration-color: var(--red-err);
+  text-decoration-thickness: 2px;
+  font-weight: 500;
+  margin-right: 4px;
+}
+.info-link {
+  display: inline-block;
+  margin-top: var(--sp3);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.info-link:hover { color: var(--gold); }
+.map-link {
+  position: relative;
+  display: block;
+  margin-top: var(--sp5);
+  border: var(--border-blk);
+  overflow: hidden;
+  line-height: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.map-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+.map-link img { width: 100%; height: auto; display: block; }
+.map-link-badge {
+  position: absolute;
+  bottom: var(--sp3);
+  right: var(--sp3);
+  background: var(--black);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  pointer-events: none;
 }
 
 
@@ -821,7 +901,7 @@ input, textarea, select { font-family: inherit; }
 }
 .qr-share-label {
   position: absolute;
-  bottom: -30px;
+  top: calc(100% + 8px);
   font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
