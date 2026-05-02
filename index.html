@@ -133,24 +133,6 @@
       </div>
     </section>
 
-    <div class="rule-black"></div>
-
-    <!-- ===================== CONTRIBUTORS ===================== -->
-    <section class="guest-section" id="contributors">
-      <div class="container">
-        <div class="section-label-row">
-          <span class="section-label">Who's Shared Photos</span>
-          <div class="label-rule"></div>
-        </div>
-        <p class="guest-count-line">
-          <span class="guest-count-num" id="contributor-count">&mdash;</span>
-          <span class="guest-count-text"> people have shared photos</span>
-        </p>
-        <div id="contributors-grid" class="guest-grid">
-          <div class="guest-placeholder">Loading&hellip;</div>
-        </div>
-      </div>
-    </section>
 
     <div class="rule-black"></div>
 
@@ -318,7 +300,6 @@
       if (!window.google || !cfg.googleClientId) return;
 
       var scopes = ['https://www.googleapis.com/auth/drive.file'];
-      if (cfg.googleSheetsId) scopes.push('https://www.googleapis.com/auth/spreadsheets');
 
       tokenClient = google.accounts.oauth2.initTokenClient({
         client_id: cfg.googleClientId,
@@ -402,10 +383,6 @@
           })(barId, pctId));
         }
 
-        if (cfg.googleSheetsId) {
-          await sheetAppendRow(uploaderName, files.length, fileNames.join(', '), 'Google Drive');
-        }
-
         selectedFiles = [];
         $('done-message').textContent =
           'Thanks ' + uploaderName + '! Your ' + files.length +
@@ -467,87 +444,6 @@
       });
     }
 
-    /* ── Google Sheets Logging ── */
-    async function sheetAppendRow(name, count, fileNames, via) {
-      var cfg = window.SITE_CONFIG || {};
-      if (!cfg.googleSheetsId || !gAccessToken) return;
-      await fetch(
-        'https://sheets.googleapis.com/v4/spreadsheets/' + cfg.googleSheetsId +
-        '/values/Sheet1!A:E:append?valueInputOption=USER_ENTERED',
-        {
-          method: 'POST',
-          headers: {
-            'Authorization': 'Bearer ' + gAccessToken,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            values: [[
-              name,
-              new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }),
-              count,
-              fileNames,
-              via || ''
-            ]]
-          })
-        }
-      );
-    }
-
-    async function loadContributors() {
-      var cfg = window.SITE_CONFIG || {};
-      var grid = $('contributors-grid');
-
-      if (!cfg.googleSheetsId || !cfg.googleApiKey) {
-        grid.innerHTML = '<div class="guest-placeholder">Configure <code>googleSheetsId</code> and <code>googleApiKey</code> in config.js to show contributors.</div>';
-        $('contributor-count').textContent = '—';
-        return;
-      }
-
-      try {
-        var res  = await fetch(
-          'https://sheets.googleapis.com/v4/spreadsheets/' + cfg.googleSheetsId +
-          '/values/Sheet1!A:C?key=' + cfg.googleApiKey
-        );
-        var data = await res.json();
-        var rows = (data.values || []).filter(function (r) {
-          return r[0] && r[0] !== 'Name';
-        });
-
-        /* Aggregate by name */
-        var byName = {};
-        rows.forEach(function (r) {
-          var n   = r[0] || '';
-          var cnt = parseInt(r[2], 10);
-          if (!byName[n]) byName[n] = 0;
-          if (!isNaN(cnt)) byName[n] += cnt;
-        });
-
-        var names = Object.keys(byName);
-        $('contributor-count').textContent = names.length || '0';
-
-        if (names.length === 0) {
-          grid.innerHTML = '<div class="guest-placeholder">No photos shared yet &mdash; be the first!</div>';
-          return;
-        }
-
-        grid.innerHTML = '';
-        names.forEach(function (name) {
-          var count = byName[name];
-          var card  = document.createElement('div');
-          card.className = 'guest-card';
-          card.innerHTML =
-            '<div class="guest-card-name">' + escHtml(name) + '</div>' +
-            '<div class="guest-card-status yes">' +
-              count + ' photo' + (count !== 1 ? 's' : '') +
-            '</div>';
-          grid.appendChild(card);
-        });
-      } catch (e) {
-        console.warn('Could not load contributors:', e);
-        grid.innerHTML = '<div class="guest-placeholder">Could not load contributor list.</div>';
-      }
-    }
-
     /* ── Share More ── */
     $('btn-share-more').addEventListener('click', function () {
       selectedFiles = [];
@@ -557,7 +453,6 @@
     });
 
     /* ── Init ── */
-    loadContributors();
     updateButtons();
 
   })();

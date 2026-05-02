@@ -24,9 +24,7 @@ window.SITE_CONFIG = {
    *
    * ── ─────────────────────────────────────────────────────── */
   googleClientId:      '765216717937-s98970gc8i2nl6fc0862iafrkj7i04s3.apps.googleusercontent.com',   // OAuth 2.0 Client ID
-  googleApiKey:        'AIzaSyCLYXnshqQyXo4CjFZD4KhwbHNmtiJD22s',   // API Key (for reading Sheets)
   googleDriveFolderId: '1wbHJTkfopiT-vVMzN_qJl5E62a3hxPLK',   // Shared Drive folder ID
-  googleSheetsId:      '1-hqFk_qnDFxi3jOURw7MPBKaE9jkPxK6jhzScVh8new',   // Google Sheet ID for contributor log
 
   /* ── iCLOUD SHARED ALBUM ──────────────────────────────────
    * Create a Shared Album in the Photos app, copy the invite link.
