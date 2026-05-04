@@ -768,7 +768,7 @@ input, textarea, select { font-family: inherit; }
 .site-footer {
   background: var(--blue-lt);
   color: var(--white);
-  padding: var(--sp6) 0;
+  padding: var(--sp3) 0;
 }
 .footer-title {
   font-size: 14px;
