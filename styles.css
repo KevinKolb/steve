@@ -11,9 +11,10 @@
   --gray-200:  #E6E6E4;
   --gray-400:  #ABABAB;
   --gray-600:  #666664;
-  --gold:      #2D5F3C;   /* forest green — Steve's varsity jacket */
-  --gold-dk:   #1C3D27;   /* deeper green for hover states */
-  --blue:      #5887E1;
+  --gold:      #006747;   /* Tulane Green */
+  --gold-dk:   #004f36;   /* Tulane Green dark — hover states */
+  --blue:      #003087;   /* Tulane Blue */
+  --blue-lt:   #79A8D0;   /* Tulane Light Blue */
   --red-err:   #C0392B;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -765,7 +766,7 @@ input, textarea, select { font-family: inherit; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--black);
+  background: var(--blue-lt);
   color: var(--white);
   padding: var(--sp6) 0;
 }
@@ -801,11 +802,30 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 @media (max-width: 560px) {
   /* Hero */
-  .hero { padding: var(--sp6) 0; }
-  .hero-grid { gap: var(--sp4); }
-  .hero-photo { max-height: 44vh; }
-  .hero-btns { flex-direction: column; }
-  .hero-btns a { text-align: center; justify-content: center; }
+  .hero { padding: var(--sp5) 0 var(--sp7); }
+  .hero-grid { gap: var(--sp5); }
+  .hero-photo {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .hero-age { font-size: clamp(72px, 22vw, 108px); }
+  .hero-meta { font-size: 15px; }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--sp5);
+  }
+  .hero-btns a {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 18px 32px;
+    font-size: 13px;
+  }
 
   /* Section padding */
   .event-info  { padding: var(--sp6) 0; }
